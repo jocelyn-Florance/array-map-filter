@@ -60,6 +60,28 @@ En sortie:
  */
 
 function getMoviesFreshness(movies) {
+    const b = movies.map(function(music){
+        if(music.rating<60){
+            return{
+                name: music.name,
+                rating: music.rating,
+                label: "rotten"
+            };
+        }else if(music.rating<=75){
+            return{
+                name: music.name,
+                rating: music.rating,
+                label: "fresh"
+            }
+        }else if(music.rating>75){
+            return{
+                name: music.name,
+                rating: music.rating,
+                label: "certified fresh"
+            }
+        }
+    });
+    return b;
 }
 
 

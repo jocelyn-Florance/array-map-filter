@@ -52,6 +52,15 @@ Tableau de sortie correspondant (toFixed transforme les nombres en chaînes)
 */
 
 function getCirclesProperties(radiuses) {
+    const b = radiuses.map(function(R){
+        let pi = 3.14159265359;
+        return {
+            radius: R,
+            circumference: (Math.round((2*pi*R)*1000)/1000).toString(),
+            surface: (Math.round((pi*R*R)*1000)/1000).toString()
+        };
+    });
+    return b;
 }
 
 
